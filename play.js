@@ -13,7 +13,7 @@ app.listen(8080);
 
 //use other files, have to be in the same folder
 app.use(express.static("images"));
-app.use(express.static("views"));
+//app.use(express.static("views"));
 app.use(express.static("css"));
 
 //allow Express to understand the urlencoded format
@@ -39,7 +39,7 @@ app.get("/",function(req,res){
 });
 
 //add new task page
-app.get("/addNewTask",function(req,res){
+app.get("/newTasks",function(req,res){
     res.sendFile(showView + "newTasks.html");
 });
 
@@ -50,9 +50,7 @@ app.post("/addTasks",function(req,res){
 });
 
 //list all tasks page
-app.get("/listAllTasks",function(req,res){
+app.get("/listTask",function(req,res){
     res.render(showView + "listTask.html",{data:db});
 });
-
-//hi guys
 
