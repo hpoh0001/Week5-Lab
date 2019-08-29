@@ -46,7 +46,8 @@ app.get("/newTasks",function(req,res){
 app.post("/addTasks",function(req,res){
     console.log(req.body);
     db.push(req.body);
-    res.sendFile(showView + "index.html");
+    //res.sendFile(showView + "index.html");
+    res.render(showView + "listTask.html",{data:db});
 });
 
 //list all tasks page
